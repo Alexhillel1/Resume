@@ -55,7 +55,56 @@
     padding-top: 0;
   }
 
-  .header-img {
+  /* .header-img {
     text-align: center;
+  } */
+}
+
+@media (max-width: 700px) {
+  .header-title {
+    font-size: 34px;
+  }
+  .header-title span {
+    font-size: 28px;
+  }
+
+  .services {
+    padding: 60px 0;
+  }
+
+  .portfolio {
+    padding: 60px 0;
+  }
+
+  .portfolio-title {
+    margin-bottom: 50px;
+  }
+
+  .project-img {
+    margin-bottom: 30px;
+  }
+
+  .project:not(:last-child) {
+    margin-bottom: 55px;
+  }
+
+  .contacts {
+    padding: 60px 0;
+  }
+
+  .contacts-title {
+    margin-bottom: 20px;
+  }
+
+  .contacts-content {
+    margin-bottom: 20px;
+  }
+
+  .contacts-btn {
+    margin-bottom: 70px;
+  }
+
+  .contacts-social {
+    column-gap: 50px;
   }
 }

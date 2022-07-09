@@ -139,6 +139,14 @@ body {
 .services-row {
   display: flex; /*распологаем карточки горизонтально вряд*/
   column-gap: 30px;
+  row-gap: 60px;
+  flex-wrap: wrap; /*для адаптации*/
+}
+
+.services-card {
+  /*для адпатации и переноса*/
+  flex: 1 1 0;
+  min-width: 315px;
 }
 
 .services-card-img {
