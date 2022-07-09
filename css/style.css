@@ -1,0 +1,255 @@
+:root {
+  --black-color: #000;
+  --wgite-color: #fff;
+  --hover-txt: #606060;
+  --bg-color: #f1f1f1;
+  --elips-color: #fda300;
+  --footer-txt: #828282;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--black-color);
+  font-size: 14px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.title1 {
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.5;
+}
+
+/*Контейнер
+===============*/
+.container {
+  max-width: 1230px; /*max - для того,что-бы в дальнейшем можно было оптимизировать под мобильные устройства*/
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/*Шапка
+=============*/
+.header {
+  padding-top: 46px; /*Отсуп шапки(сверху)*/
+  background-color: var(--bg-color);
+  padding-bottom: 76px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /*навигация прибита к низу*/
+  padding-bottom: 76px; /*Отсуп навигации к секции контента*/
+}
+
+.logo {
+  position: relative; /*делаем родителем относительно которого будем позиционировать круг*/
+
+  padding-right: 12px; /*делаем визуальные оступы,что-бы дать кругу размиститься в угол*/
+  padding-bottom: 3px;
+
+  font-weight: 700;
+  font-size: 32px;
+
+  line-height: 1;
+}
+
+.logo::after {
+  position: absolute;
+  right: 0; /*прибиваем к правому углу*/
+  bottom: 0; /*прибиваем к правому углу до упора вниз*/
+
+  content: '';
+  display: block; /*делаем ссылку блочным элементом*/
+  width: 8px;
+  height: 8px;
+  background-color: var(--elips-color);
+  border-radius: 50%; /*для создания круга*/
+}
+/*Навигация
+=============*/
+.nav-list {
+  display: flex;
+  column-gap: 80px; /*отступ между колонками, чтобы не писать last-child*/
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-button {
+  display: none;
+}
+
+.nav-link {
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--hover-txt);
+}
+
+.nav-link.active {
+  color: var(--hover-txt);
+}
+/*Контент под шапкой
+=============*/
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px; /*на тот случай если контент будет уменьшаться, что-бы избежать соприкосновения изображения и текста*/
+}
+
+.haeder-content {
+  padding-top: 112px; /*отступ текста относительно верхнего края картинки, чтобы расположить текст ровно по центру картинки*/
+  max-width: 500px; /*ограничиваем максимальную ширину под адаптацию*/
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.header-desc {
+  font-weight: 400;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+/*Услуги
+=============*/
+.services {
+  padding-top: 90px; /*Внутренние отсупы секции*/
+  padding-bottom: 90px;
+}
+.services-row {
+  display: flex; /*распологаем карточки горизонтально вряд*/
+  column-gap: 30px;
+}
+
+.services-card-img {
+  margin-bottom: 30px;
+}
+.services-card-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.services-card p {
+  font-weight: 400;
+  line-height: 2;
+}
+/*Портфолио
+=============*/
+.portfolio {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: var(--bg-color);
+}
+.portfolio-title {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.project {
+  text-align: center;
+}
+
+.project:not(:last-child) {
+  margin-bottom: 90px;
+}
+
+.project-img {
+  margin-bottom: 40px;
+}
+.project-title {
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration-line: underline;
+}
+/*Подвал
+=============*/
+.footer {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+.contacts-title {
+  margin-bottom: 40px;
+}
+.contacts-content {
+  max-width: 480px; /* ограничиваем ширину контента, и с помощью margin 0 auto ставим его по центру*/
+  margin: 0 auto 40px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.contacts-content p + p {
+  margin-top: 1em; /*у каждого элемента будет отсуп равен размеру шрифта*/
+}
+.contacts-btn {
+  margin-bottom: 80px;
+}
+.btn {
+  display: inline-block; /*чтобы ширина определялась по контенту внутри*/
+  background-color: var(--black-color);
+  padding: 7px 22px;
+  color: var(--wgite-color);
+  border-radius: 30px;
+  transition: background-color 0.2s ease-in, top 0.2s ease-in;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #323232;
+  color: var(--wgite-color);
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+  background-color: #000;
+}
+
+.btn:visited {
+  color: var(--wgite-color);
+}
+.contacts-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 60px;
+  margin-bottom: 40px;
+}
+
+.contacts-social a {
+  transition: transform 0.3s ease-out;
+}
+
+.contacts-social a:hover {
+  transform: translate(0, -5px);
+}
+.contacts-footer {
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: var(--footer-txt);
+}
